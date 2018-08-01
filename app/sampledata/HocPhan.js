@@ -108,6 +108,65 @@ exports.HocPhan = [
         soTietBaiTap: 0,
         hocPhanTienQuyet: "",
         hocPhanDeNghiHocTruoc: ""
+    },
+    {
+        maHocPhan: "CTT201",
+        tenHocPhan: "An toàn và bảo mật dữ liệu trong hệ thống thông tin",
+        soTinChi: 4,
+        loaiHocPhan: "BB",
+        nhomHocPhan: "HTTT",
+        soTietLyThuyet: 45,
+        soTietThucHanh: 30,
+        soTietBaiTap: 0,
+        hocPhanTienQuyet: "",
+        hocPhanDeNghiHocTruoc: ""
+    },
+    {
+        maHocPhan: "CTT202",
+        tenHocPhan: "Cơ sở dữ liệu nâng cao",
+        soTinChi: 4,
+        loaiHocPhan: "BB",
+        nhomHocPhan: "HTTT",
+        soTietLyThuyet: 45,
+        soTietThucHanh: 30,
+        soTietBaiTap: 0,
+        hocPhanTienQuyet: "",
+        hocPhanDeNghiHocTruoc: ""
+    },
+    {
+        maHocPhan: "CTT203",
+        tenHocPhan: "Hệ quản trị cơ sở dữ liệu",
+        soTinChi: 4,
+        loaiHocPhan: "BB",
+        nhomHocPhan: "HTTT",
+        soTietLyThuyet: 45,
+        soTietThucHanh: 30,
+        soTietBaiTap: 0,
+        hocPhanTienQuyet: "",
+        hocPhanDeNghiHocTruoc: ""
+    },
+    {
+        maHocPhan: "CTT204",
+        tenHocPhan: "Phân tích thiết kế hệ thống thông tin",
+        soTinChi: 4,
+        loaiHocPhan: "BB",
+        nhomHocPhan: "HTTT",
+        soTietLyThuyet: 45,
+        soTietThucHanh: 30,
+        soTietBaiTap: 0,
+        hocPhanTienQuyet: "",
+        hocPhanDeNghiHocTruoc: ""
+    },
+    {
+        maHocPhan: "CTT205",
+        tenHocPhan: "Phát triển ứng dụng hệ thống thông tin hiện đại",
+        soTinChi: 4,
+        loaiHocPhan: "BB",
+        nhomHocPhan: "HTTT",
+        soTietLyThuyet: 45,
+        soTietThucHanh: 30,
+        soTietBaiTap: 0,
+        hocPhanTienQuyet: "",
+        hocPhanDeNghiHocTruoc: ""
     }
-    
 ]
