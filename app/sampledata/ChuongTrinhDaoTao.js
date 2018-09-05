@@ -1,6 +1,6 @@
 //dữ liệu mẫu là mảng các JS object
 //theo thiết kế: https://docs.google.com/spreadsheets/d/1iER7kPLNYPeJ6zvwZ2w_YrTR4o-7ncuyLAIu8O8RI1Y/edit#gid=0
-exports.ChuongTrinhDaoTao = [{
+module.exports = [{
         tenChuongTrinhDaoTao: "Cử nhân Kỹ thuật phần mềm",
         maChuongTrinhDaoTao: "KTPM2015",
         trinhDoDaoTao: "Đại học",
@@ -164,7 +164,7 @@ exports.ChuongTrinhDaoTao = [{
         ],
         dieuKienTotNghiep: "Tích luỹ ít nhất 146 tín chỉ của khối kiến thức giáo dục đại cương và giáo dục chuyên nghiệp như đã mô tả ở mục 6, đồng thời thoả các điều kiện theo điều 28.",
         filePdfGoc: "http://www.fit.hcmus.edu.vn/vn/LinkClick.aspx?fileticket=QuLok685kyE%3d&tabid=956&mid=1574"
-    }, {
+}/*, {
         tenChuongTrinhDaoTao: "Cử nhân Hệ thống thông tin",
         maChuongTrinhDaoTao: "HTTT2015",
         trinhDoDaoTao: "Đại học",
@@ -289,5 +289,5 @@ exports.ChuongTrinhDaoTao = [{
         }],
         dieuKienTotNghiep: "Tích luỹ ít nhất 146 tín chỉ của khối kiến thức giáo dục đại cương và giáo dục chuyên nghiệp như đã mô tả ở mục 6, đồng thời thoả các điều kiện theo Điều 28 trong Qui chế Đào tạo đại học và cao đẳng theo hệ thống tín chỉ ban hành kèm theo Quyết định số 1368/ĐHQG-ĐH&SĐH ngày 21 tháng 11 năm 2008 của Giám đốc Đại học Quốc gia TP Hồ Chí Minh.",
         filePdfGoc: "http://www.fit.hcmus.edu.vn/vn/LinkClick.aspx?fileticket=ZOcA3NKF8x0%3d&tabid=956&mid=1574"
-    }
+    }*/
 ]

@@ -15,7 +15,8 @@ let ChuongTrinhDaoTaoSchema = new Schema({
     thoiGianDaoTao: String,
     khoiLuongTinChi: Number,
     doiTuongTuyenSinh: String,
-    quyTrinhDaoTao: [{
+    quyTrinhDaoTao: String,
+    cauTrucChuongTrinh: [{
         khoiKienThuc: String,
         chiTietSoTinChi: {
             soTinChiBatBuoc: Number,
