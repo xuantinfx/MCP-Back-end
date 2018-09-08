@@ -4,12 +4,18 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-const mongoose = require('mongoose');
-const {connectionString} =require("./config")
+const routesWithNoAuth = require('./routes/routesWithNoAuth');
+const routesWithAuth = require('./routes/routesWithAuth');
 
-mongoose.connect(connectionString)
+const mongoose = require('mongoose');
+const cors = require('cors');
+const jwtMiddleware = require('express-jwt')
+
+const {connectionString, SECRET_TOKEN} = require("./config")
+const {getToken} = require('./controller/auth')
+const statusCode = require('./constant/statusCode')
+
+mongoose.connect(connectionString, {useNewUrlParser: true})
 .then(res => {
   console.log("Connect to DB success!")
 })
@@ -20,8 +26,11 @@ mongoose.connect(connectionString)
 var app = express();
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+// app.set('views', path.join(__dirname, 'views'));
+// app.set('view engine', 'jade');
+
+// For each request, provide wildcard Access-Control-* headers via OPTIONS call
+app.use(cors()); 
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -29,8 +38,19 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-//app.use('/', indexRouter);
-app.use('/api/v1/user', usersRouter);
+// Dont with Authenticate
+app.use('/', routesWithNoAuth);
+
+// Middleware Auth
+app.use(jwtMiddleware({
+    secret: SECRET_TOKEN, // Use the same token that we used to sign the JWT above
+    // Let's allow our clients to provide the token in a variety of ways
+    getToken: getToken,
+    resultProperty: 'locals.user'
+}));
+
+// With Authenticate
+app.use('/', routesWithAuth);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -39,13 +59,15 @@ app.use(function(req, res, next) {
 
 // error handler
 app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
+    // set locals, only providing error in development
+    // res.locals.message = err.message;
+    // res.locals.error = req.app.get('env') === 'development' ? err : {};
 
-  // render the error page
-  res.status(err.status || 500);
-  res.render('error');
+    res.status(err.status || 500);
+    
+    let endMessage = statusCode[err.status] || "Unknown error"
+
+    res.end(endMessage);
 });
 
 module.exports = app;

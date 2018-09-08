@@ -36,6 +36,6 @@ let ChuongTrinhDaoTaoSchema = new Schema({
         soHocPhanTichLuyMin: Number,
         soTinChiTichLuyMin: Number
     }]
-});
+}, { strict: false });
 
 module.exports = mongoose.model('ChuongTrinhDaoTao', ChuongTrinhDaoTaoSchema);

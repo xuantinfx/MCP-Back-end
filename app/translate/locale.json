@@ -1,0 +1,21 @@
+{
+    "Welcome": {
+        "vi": "Xin chao",
+        "en": "Welcome"
+    },
+    "Chat": {
+        "vi": "Nhan tin"
+    },
+    "Unknown error": {
+        "vi": "Lỗi không xác định"
+    },
+    "This email has already been taken": {
+        "vi": "Email đã có người sử dụng"
+    },
+    "Password and cofirm password not match": {
+        "vi": "Mật khẩu và mật khẩu nhập lại không khớp"
+    }, 
+    "Register success": {
+        "vi": "Đăng ký tài khoản thành công"
+    }
+}

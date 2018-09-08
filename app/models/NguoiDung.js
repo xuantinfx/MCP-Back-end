@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 let NguoiDungSchema = new Schema({
+    email: String,
     hoVaTen: String,
     mssv: String,
     matKhau: String,
@@ -19,7 +20,7 @@ let NguoiDungSchema = new Schema({
             trangThai: String
         }]
     }]
-});
+}, { strict: false });
 
 module.exports = mongoose.model('NguoiDung', NguoiDungSchema);
 

@@ -14,7 +14,7 @@ let HocPhanSchema = new Schema({
     chiTietDaoTao: [{
         path: String
     }]
-});
+}, { strict: false });
 
 module.exports = mongoose.model('HocPhan', HocPhanSchema);
 
