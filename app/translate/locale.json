@@ -17,5 +17,23 @@
     }, 
     "Register success": {
         "vi": "Đăng ký tài khoản thành công"
+    },
+    "Email is not empty": {
+        "vi": "Email không được rỗng"
+    },
+    "Name is not empty": {
+        "vi": "Tên không được rỗng"
+    }, 
+    "Password is not empty": {
+        "vi": "Mật khẩu không được rỗng"
+    }, 
+    "Login success": {
+        "vi": "Đăng nhập thành công"
+    },
+    "User not exits": {
+        "vi": "Tài khoản không tồn tại"
+    },
+    "Wrong password": {
+        "vi": "Sai mật khẩu"
     }
 }

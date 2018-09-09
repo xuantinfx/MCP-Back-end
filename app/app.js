@@ -12,7 +12,7 @@ const cors = require('cors');
 const jwtMiddleware = require('express-jwt')
 
 const {connectionString, SECRET_TOKEN} = require("./config")
-const {getToken} = require('./controller/auth')
+const {getTokenFromHeader} = require('./controller/auth')
 const statusCode = require('./constant/statusCode')
 
 mongoose.connect(connectionString, {useNewUrlParser: true})
@@ -45,8 +45,8 @@ app.use('/', routesWithNoAuth);
 app.use(jwtMiddleware({
     secret: SECRET_TOKEN, // Use the same token that we used to sign the JWT above
     // Let's allow our clients to provide the token in a variety of ways
-    getToken: getToken,
-    resultProperty: 'locals.user'
+    getToken: getTokenFromHeader,
+    //resultProperty: 'user'
 }));
 
 // With Authenticate

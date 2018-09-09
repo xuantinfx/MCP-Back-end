@@ -3,9 +3,25 @@ const NguoiDung = require('../../models/NguoiDung');
 const {translate} = require('../../translate/translate')
 const bcrypt =require('bcryptjs')
 const _ = require('lodash')
+const {createToken} = require('../auth')
 
 module.exports = (req, res, next) => {
     let {email, hoVaTen, matKhau, cofirm_password} = req.body;
+
+    if(!email) {
+        responseData(res, {}, 200, {error: [translate("Email is not empty")], message: []})
+        return;
+    }
+
+    if(!hoVaTen) {
+        responseData(res, {}, 200, {error: [translate("Name is not empty")], message: []})
+        return;
+    }
+
+    if(!matKhau) {
+        responseData(res, {}, 200, {error: [translate("Password is not empty")], message: []})
+        return;
+    }
 
     if(matKhau !== cofirm_password) {
         responseData(res, {}, 200, {error: [translate("Password and cofirm password not match")], message: []})
@@ -30,7 +46,10 @@ module.exports = (req, res, next) => {
         newUser = _.omit(newUser, ["cofirm_password"])
         new NguoiDung(newUser).save()
 
-        responseData(res, {newUser}, 200, {error: [], message: [translate("Register success")]})
+        let payload = _.omit(newUser, ["matKhau", "bangDiem"]);
+        let token = createToken(payload);
+
+        responseData(res, {...newUser, token}, 200, {error: [], message: [translate("Register success")]})
     })
     .catch(err => {
         if(err !== "") {
