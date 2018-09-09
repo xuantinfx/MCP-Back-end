@@ -1,3 +1,4 @@
 module.exports = {
     connectionString : "mongodb+srv://mcp:mcp123456@mcp-cluster-kxlj5.mongodb.net/MCP?retryWrites=true",
+    SECRET_TOKEN: "123456"
 }
