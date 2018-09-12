@@ -7,7 +7,7 @@ const NguoiDungModel = require('../models/NguoiDung');
 
 const mongoose = require('mongoose')
 const {connectionString} = require('../config')
-mongoose.connect(connectionString);
+mongoose.connect(connectionString, {useNewUrlParser: true});
 
 // insert NguoiDung
 NguoiDungModel.insertMany(NguoiDung, (err, docs) => {

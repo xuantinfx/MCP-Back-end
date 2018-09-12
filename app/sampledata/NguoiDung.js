@@ -2,6 +2,7 @@
 //theo thiết kế: https://docs.google.com/spreadsheets/d/1iER7kPLNYPeJ6zvwZ2w_YrTR4o-7ncuyLAIu8O8RI1Y/edit#gid=0
 module.exports = [
     {
+        email: "xuantinfx@gmail.com",
         hoVaTen: "Đào Xuân Tin",
         mssv: "1512574",
         matKhau: "123456",
