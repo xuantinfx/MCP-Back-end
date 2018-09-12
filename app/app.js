@@ -6,6 +6,7 @@ var logger = require('morgan');
 
 const routesWithNoAuth = require('./routes/routesWithNoAuth');
 const routesWithAuth = require('./routes/routesWithAuth');
+const {responseData} = require('./utilities/responseData')
 
 const mongoose = require('mongoose');
 const cors = require('cors');
@@ -17,10 +18,10 @@ const statusCode = require('./constant/statusCode')
 
 mongoose.connect(connectionString, {useNewUrlParser: true})
 .then(res => {
-  console.log("Connect to DB success!")
+  console.log("Connect to DB successfully!")
 })
 .catch(err => {
-  console.log("Failt connect to DB!")
+  console.log("Failed to connect to DB!")
 })
 
 var app = express();
@@ -67,7 +68,7 @@ app.use(function(err, req, res, next) {
     
     let endMessage = statusCode[err.status] || "Unknown error"
 
-    res.end(endMessage);
+    res.end(responseData(res, {}, err.status, {error: endMessage}));
 });
 
 module.exports = app;
